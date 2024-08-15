@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support</title>
+    <link rel="icon" href="logo.png">
+    <script src="https://kit.fontawesome.com/3b97f54f7c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.bundle.js"></script>
+
+</head>
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+  }
+    .logo{
+        position: relative;
+        height:50px;
+        top:10px;
+    }
+    .navbar{
+        position: absolute;
+        display:flex;
+        align-items: center;
+        background-color: #000000;
+        width:1473px;
+    }
+    .navbar ul {
+        list-style: none;
+    }
+    .navbar ul li {
+        display: inline-block;
+        margin: 0px 8px;
+        width: 70px;
+        padding-left: 20px;
+    }
+    .navbar ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 17px;
+        letter-spacing: 1px;
+    }
+    .navbar ul li a:hover,.navbar ul li a:active,.navbar ul li a:focus{
+        color: green;
+        font-size: 15px;
+    }
+    .navbar ul li.divider {
+        color: #ffffff;
+        font-size: 26px;
+        margin: 0px 20px;
+        width: auto;
+    }
+    .navbar button{
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 14px 30px;
+        border: 0px;
+        border-radius: 40px;
+        cursor: pointer;
+        margin-left: 20px;
+    }
+     .navbar button:hover,.navbar button:active,.navbar button:focus {
+        background-color: green;
+    }
+    .move{
+        position: relative;
+        left: 800px;
+        top:15px;
+    }
+    .login{
+        position: absolute;
+        top:30px;
+        left:1330px;
+    }
+    .login button{
+        height:40px;
+        font-size: small;
+        padding:10px;
+
+    }
+    .signup{
+        position: absolute;
+        width:100px;
+        right:-20px;
+    }
+    .divider{
+        position: relative;
+        top:-10px;
+    }
+    .back{
+        background-image: linear-gradient(black,green, black,black,black);
+        position: relative;
+        top:75px;
+        height:665px;
+        margin:-8px
+    }
+    
+    .col1{
+        position: absolute;
+        color:rgb(237, 205, 205);
+        top:160px;
+        left:400px;
+    }
+    .col2{
+        position: absolute;
+        color:white;
+        top:210px;
+        left:400px;
+    }
+    .col3{
+        position: absolute;
+        color:grey;
+        top:300px;
+        left:400px;
+    }
+    .col3 u{
+        color:white;
+    }
+    .col4{
+        position: absolute;
+        color:white;
+        top:380px;
+        left:400px;
+        height:40px;
+        font-size: larger;
+        width:450px;
+    }
+    .col5,.col6,.col7{
+        display:inline;
+        position:relative;
+        top:-200px;
+        left:360px;
+        color:white;
+        padding:30px;
+        border:1px solid transparent;
+        border-radius: 10px;
+    }
+    .col5{
+        background-color: rgb(195, 3, 195);
+    }
+    .col6{
+        background-color: rgb(47, 47, 234);
+    }
+    .col7{
+        background-color: rgb(92, 4, 4);
+        padding-right: 40px;
+
+    }
+    .col8,.col9,.col10{
+        display:inline;
+        position:relative;
+        top:-100px;
+        left:-90px;
+        color:white;
+        padding:30px;
+        border:1px solid transparent;
+        border-radius: 10px;
+    }
+    .col8{
+        background-color: rgb(195, 3, 195);
+        padding-right: 18px;
+    }
+    .col9{
+        background-color: rgb(47, 47, 234);
+        padding-right: 40px;
+    }
+    .col10{
+        background-color: rgb(92, 4, 4);
+        padding-right: 43px;
+    }
+    .container1{
+        background-color: rgb(71, 70, 70);
+        position: relative;
+        top:32px;
+        margin:-8px;
+        height:400px;
+    }
+    .container1 ul li {
+        list-style:none;
+        color:white;
+        position: absolute;
+        top:40px;
+        left:450px;
+    }
+    .col12,.col13,.col14,.col15,.col16{
+        cursor:pointer;
+    }
+    .topbar .prev-next-buttons button {
+        color: rgb(155, 153, 153);
+        cursor: pointer;
+        width: 34px;
+        height: 54px;
+        border-radius: 50%;
+        font-size: 18px;
+        border: 0px;
+        background-color: rgb(33, 31, 31);
+        margin-right:10px;
+        
+  }
+  .fa-chevron-left{
+    position: absolute;
+    top:20px;
+    left:140px;
+  }
+  .fa-chevron-right{
+    position: absolute;
+    top:20px;
+    left:240px;
+  }
+    .navbar-toggler {
+        height:40px;
+    }
+    .navbar-toggler-icon{
+        font-size: small;
+    }
+
+  @media(max-width:426px){
+    * {
+  padding: 0;
+  margin: 0;
+}
+    .navbar{
+        width:1280px
+    }
+    .back{
+        width:1288px;
+        height:2040px;
+        z-index: -1;
+    }
+    .container1{
+        width:1288px;
+        position: absolute;
+        top:2190px;
+    }
+    .navbar-toggler{
+        position: relative;
+        left:400px;
+    }
+    .head,.nav-item{
+            position: relative;
+            top:-30px;
+    }
+    .divider{
+        position: relative;
+        left:150px;
+        top:-55px;
+    }
+    .support{
+        position: relative;
+        top:75px;
+        background-color: black;
+    }
+    .move{
+        position: relative;
+    }
+    .signup{
+        position: absolute;
+        left:280px;
+        top:-100px;
+    }
+    .login{
+        position: relative;
+        left:1080px;
+        top:-40px;
+    }
+    .login button{
+        height:40px;
+    }
+    .col1{
+        position: absolute;
+        top:300px;
+        font-size: xx-large;
+        width:400px;
+        text-shadow:0 5px 10px red;
+    }
+    .col2{
+        position: absolute;
+        top:500px;
+        font-size: xx-large;
+        width:400px;
+    }
+    .col3{
+        position: absolute;
+        top:700px;
+        font-size: xx-large;
+        width:400px;
+    }
+    .col4{
+        position: absolute;
+        top:900px;
+        font-size: xx-large;
+        width:400px;
+    }
+    .col5,.col6,.col7,.col8,.col9,.col10{
+        position: absolute;
+        top:1000px;
+        left:400px;
+        width:400px;
+        text-align: center;
+    }
+    .col6{
+        top:1100px;
+    }
+    .col7{
+        top:1200px;
+    }
+    .col8{
+        top:1300px;
+    }
+    .col9{
+        top:1400px;
+    }
+    .col10{
+        top:1500px;
+    }
+  }
+  @media(min-width:426px){
+    .back{
+        width:1481px;
+        height:770px;
+    }
+    .container1{
+        width:1481px;
+    }
+    .col1,.col3{
+        font-size: xx-large;
+    }
+    .col2{
+        font-size: larger;
+        position: absolute;
+        top:230px;
+    }
+    .col4{
+        position: absolute;
+        top:440px;
+    }
+    .col5,.col6,.col7{
+        display: inline;
+        position:relative;
+        top:-160px;
+        left:330px;
+    }
+    .col8{
+        display:inline;
+        position:relative;
+        top:-60px;
+        left:-140px;
+    }
+    .col8{
+        padding-right: 26px;
+    }
+    .col9,.col10{
+        display:inline;
+        position:relative;
+        top:-85px;
+        left:497px;
+    }
+  }
+  @media(min-width:769px){
+    .col5,.col6,.col7{
+        position: relative;
+        top:-200px;
+        left:270px;
+    }
+    .col8{
+        position: relative;
+        left:-200px;
+        top:-110px;
+    }
+    .col9,.col10{
+        position: relative;
+        left:-200px;
+        top:-110px;
+    }
+    .audioplayer{
+        
+    }
+  }
+ 
+</style>
+<body>
+    <div class="navbar navbar-expand-lg navbar-expand-md ">
+        <ul>
+            <li>
+                <a href="index.html"><img class="logo" src="logo.png" alt="logo"></a>
+            </li>
+        </ul>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="topbar">
+            <div class="prev-next-buttons navbar1">
+              <button type="button" id="prev-page" class="fa fas fa-chevron-left"></button>
+              <button type="button" id="next-page" class="fa fas fa-chevron-right"></button>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="move right-align navbar-nav ml-auto">
+          <li class="nav-item-dropdown">
+            <a class="head" href="premium.html">Premium</a>
+          </li>
+          <li class="nav-item nav-item1">
+            <a class="support" href="support.html">Support</a>
+          </li>
+          <li class="nav-item nav-item1">
+            <a class="download" href="download.html">Download</a>
+          </li>
+          <li class=" nav-item divider">|</li>
+          <li class="nav-item nav-item1">
+            <a class="signup" href="signup.html">Sign Up</a>
+          </li>
+        </ul>
+        <a class="nav-item login" href="login.html">
+        <button type="button">Log In</button>
+      </a>
+    </div>
+    </div>
+    <div class="back"></div>
+    <div class="container">
+        <ul>
+            <li>
+                <h3 class="col1">Sasi's Music Support</h3>
+                <h1 class="col2">How can we help you?</h1>
+                <a href="login.html"><h3 class="col3"><u>Log</u> <u> in</u> for faster help</h3></a>
+                <input class="col4" type="text" placeholder="Search your Support?">
+                <div class="col5">Payment Help</div>
+                <div class="col6">Account Help</div>
+                <div class="col7"> Plan Help </div>
+                <div class="col8">Safety&Privacy</div>
+                <div class="col9">Device Help</div>
+                <div class="col10">App Help</div>
+            </li>
+        </ul>
+    </div>
+    <div class="container1">
+        <ul>
+            <li>
+                <h1 class="col11">Quick help</h2><br>
+                <h3 class="col12">Can't log in</h4>
+                <h3 class="col13">Failed payment help</h4>
+                <h3 class="col14">Charged too much</h4>
+                <h3 class="col15">Invite or remove Family plan members</h4>
+                <h3 class="col16">Update payment details</h4>
+            </li>
+        </ul>
+    </div>
+    <script>
+       document.getElementById("prev-page").addEventListener("click", function() {
+            window.history.back();
+        });
+        document.getElementById("next-page").addEventListener("click", function() {
+            window.history.forward();
+        });
+      
+      </script>
+</body>
+</html

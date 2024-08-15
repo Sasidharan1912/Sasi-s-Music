@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium</title>
+    <link rel="icon" href="logo.png">
+    <script src="https://kit.fontawesome.com/3b97f54f7c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.bundle.js"></script>
+</head>
+<style>
+    .logo{
+        position: absolute;
+        height:50px;
+        top:30px;
+    }
+    .navbar{
+        position: relative;
+        display:flex;
+        align-items: center;
+        background-color: #000000;
+        margin: -8px;
+        width:1496px;
+        height: 100px;
+    }
+    .navbar ul {
+        list-style: none;
+    }
+    .navbar ul li {
+        display: inline-block;
+        margin: 0px 8px;
+        width: 90px;
+        padding-left: 20px;
+    }
+    .navbar ul li a,.navbar ul li {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 17px;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+    .navbar ul li a:hover,.navbar ul li a:active,.navbar ul li a:focus,
+    .navbar ul li :hover,.navbar ul li :active,.navbar ul li :focus{
+        color: green;
+        font-size: 16px;
+    }
+    .navbar ul li.divider {
+        color: #ffffff;
+        font-size: 26px;
+        margin: 0px 20px;
+        width: auto;
+    }
+    .navbar button{
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 14px 30px;
+        border: 0px;
+        border-radius: 40px;
+        cursor: pointer;
+    }
+     .navbar button:hover,.navbar button:active,.navbar button:focus {
+        background-color: green;
+    }
+    .login{
+        position: relative;
+        left:230px;
+    }
+    .move{
+        margin-left: 600px;
+    }
+    .subhead{
+        display: none;
+        position: absolute;
+        background-color: rgb(37, 37, 37);
+        top:86px;
+        left:830px;
+        z-index:1;
+        width: 220px;
+        height:220px;
+        padding-left: 10px;
+    }
+    .heading:hover .subhead{
+        display: block;
+    }
+    .head{
+        padding:50px;
+        position: relative;
+        left:-50px;
+    }
+    .subhead u{
+        text-decoration: none;
+        color:grey
+    }
+    .img{
+        top:86px;
+        margin:-8px;
+    }
+    .img1{
+        position: relative;
+        top:-500px;
+        height:50px;
+        left:400px;
+    }
+    .col1{
+        position: absolute;
+        top:140px;
+        color:yellow;
+        left:470px;
+        font-size: xx-large;
+        border:1px solid green;
+        border-radius: 10px;
+        background-image: linear-gradient(green,black);
+        width:350px;
+        padding-left: 10px;
+    }
+    .col2{
+        position: absolute;
+        top:220px;
+        color:white;
+        font-size: xx-large;
+        text-align: center;
+        left:280px;
+    }
+    .col3{
+        position: absolute;
+        top:355px;
+        color: white;
+        left:300px;
+    }
+    .col4{
+        position: absolute;
+        top:450px;
+        color: yellow;
+        left:400px;
+        font-size: x-large;
+    }
+    .col4 u{
+        color:green;
+    }
+    .col5{
+        position: absolute;
+        top:540px;
+        color: white;
+        left:470px;
+        font-size: xx-large;
+        text-align: center;
+    }
+    .topbar .prev-next-buttons button {
+        color: rgb(155, 153, 153);
+        cursor: pointer;
+        height: 54px;
+        border-radius: 100%;
+        font-size: 16px;
+        border: 0px;
+        background-color: rgb(33, 31, 31);
+    }
+    .fa-chevron-left{
+        position: absolute;
+        top:20px;
+        left:140px;
+    }
+    .fa-chevron-right{
+        position: absolute;
+        top:20px;
+        left:240px;
+    }
+    .navbar-toggler {
+        height:40px;
+    }
+    .navbar-toggler-icon{
+        font-size: small;
+    }
+    .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+    }
+
+    /*  */
+
+    @media(max-width:426px){
+        .navbar{
+            width:828px;
+        }
+        .navbar-toggler{
+            position: absolute;
+            left:720px;
+        }
+        .img{
+            width:828px;
+            height:1582px;
+        }
+        .img1{
+            position: absolute;
+            top:250px;
+            left:30px;
+        }   
+        .col5{
+            position: absolute;
+            top:1300px;
+            left:30px;
+            width:440px;
+        }
+        .col4{
+            position: absolute;
+            top:1100px;
+            left:20px;
+            font-size: xx-large;
+            text-align: center;
+            width:500px;
+        }
+        .col3{
+            position: absolute;
+            top:750px;
+            left:20px;
+            font-size: large;
+            text-align: center;
+            width:500px;
+        }
+        .col2{
+            position: absolute;
+            top:500px;
+            left:20px;
+            font-size: x-large;
+            text-align: center;
+            width:500px;
+        }
+        .col1{
+            position:absolute;
+            top:250px;
+            left:100px;
+        }
+        .head,.nav-item{
+            position: relative;
+            top:-30px;
+        }
+        .divider{
+            position: relative;
+            left:-130px;
+            top:-85px;
+        }
+        .support{
+            position: relative;
+            top:75px;
+            background-color: black;
+            
+        }
+        .signup{
+            position: relative;
+            left:-230px;
+            top:-120px;
+        }
+        .login{
+            position: relative;
+            left:380px;
+            top:-140px;
+        }
+        .login button{
+            height:40px;
+        }
+        .subhead{
+            position: absolute;
+            left:480px;
+            top:10px;
+            height:fit-content;
+        }
+     }
+     @media(min-width:426px){
+        .navbar{
+            width:2650px;
+            height:180px;
+        }
+        .logo{
+            height:100px;
+        }
+        .topbar{
+            position: relative;
+            left:20px;
+            top:-50px;
+        }
+        .login{
+            position: relative;
+            left:1200px;
+        }
+        .navbar ul li{
+            font-size: xx-large;
+        }
+        .head{
+            position: relative;
+            top:-10px;
+            left:1000px;
+            font-size: medium;
+        }
+        .divider{
+            position: relative;
+            left:1100px;
+        }
+        .subhead{
+            position: absolute;
+            left:1800px;
+            top:170px;
+            height:fit-content;
+            width:fit-content;
+        }
+        
+        .nav-item1{
+            position: relative;
+            left:1100px;
+            top:-10px;
+        }
+        .img{
+            position: relative;
+            top:0px;
+            width:2650px;
+            height:2071px;
+        }
+        .col5{
+            position: absolute;
+            top:1800px;
+            left:200px;
+            font-size: xx-large;
+            width:1000px;
+        }
+        .col4{
+            position: absolute;
+            top:1500px;
+            font-size: xx-large;
+            width:1000px; 
+        }
+        .col3{
+            position: absolute;
+            top:1100px;
+            font-size: xx-large;
+            width:1000px; 
+            text-align: center;
+        }
+        .col2{
+            position: absolute;
+            top:800px;
+            font-size: xx-large;
+            width:1000px; 
+            text-align: center;
+        }
+        .col1{
+            position: absolute;
+            top:500px;
+            font-size: xx-large;
+            width:1000px; 
+            height:80px;
+            text-align: center;
+        }
+        .img1{
+            position: absolute;
+            top: 475px;
+            left:350px;
+            height:100px;
+        }
+        
+     }
+     @media(min-width:769px){
+        .navbar{
+            width:1496px;
+            height:100px;
+        }
+        .img{
+            width:1496px;
+            height:664px;
+        }
+        .logo{
+            height:50px;
+            top:25px;
+        }
+        .topbar{
+            position: absolute;
+            top:5px;
+        }
+        .head{
+            position: absolute;
+            left:680px;
+            top:-12px;
+            font-size: large;
+        }
+        .nav-item1{
+            position: relative;
+            top:-5px;
+            left:0px;
+        }
+        .divider{
+            position: relative;
+            left:10px;
+        }
+        .login{
+            position: relative;
+            left:100px;
+        }
+        .img1{
+            position: absolute;
+            top:195px;
+            height:50px;
+            left:400px;
+        }
+        .subhead{
+            position: relative;
+            left:-90px;
+            top:183px;
+            height:300px;
+            width:300px;
+        }
+        .col1{
+            font-size: x-large;
+            width:400px;
+            position: absolute;
+            top:200px;
+            height:50px;
+        }
+        .col2{
+            position: absolute;
+            top:280px;
+            font-size: large;
+            left:180px;
+        }
+        .col3{
+            position: absolute;
+            top:380px;
+            font-size: small;
+            left:160px;
+        }
+        .col4{
+            position: absolute;
+            top:450px;
+            font-size: x-large;
+            left:520px;
+            width:300px;
+            text-align: center;
+        }
+        .col5{
+            position: absolute;
+            top:580px;
+            font-size: x-large;
+            left:160px;
+        }
+     }
+     
+    
+        
+       
+  
+</style>
+<body>
+    <div class="navbar navbar-expand-lg navbar-expand-md ">
+        <ul>
+            <li>
+                <a href="index.html"><img class="logo" src="logo.png" alt="logo"></a>
+            </li>
+        </ul>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="topbar">
+            <div class="prev-next-buttons navbar1">
+              <button type="button" id="prev-page" class="fa fas fa-chevron-left"></button>
+              <button type="button" id="next-page" class="fa fas fa-chevron-right"></button>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="move right-align navbar-nav ml-auto">
+          <li class="nav-item-dropdown">
+            <div class="heading">
+                <span class="head">Premium</span>
+                <div class="subhead">
+                    <a class="subheading" href="">Premium individual<br><u>1 account - For person.</u></a><br><br>
+                    <a class="subheading" href="">Premium Duo<br><u>2 accounts - For couples.</u></a><br><br>
+                    <a class="subheading" href="">Premium Family<br><u>6 accounts - For family.</u></a><br><br>
+                    <a class="subheading" href="">Premium Student <br><u>1 account - For students.</u></a>
+                </div>
+            </div>
+          </li>
+          <li class="nav-item nav-item1">
+            <a class="support" href="support.html" >Support</a>
+          </li>
+          <li class="nav-item nav-item1">
+            <a class="download" href="download.html">Download</a>
+          </li>
+          <li class="nav-item divider">|</li>
+          <li class="nav-item nav-item1">
+            <a class="signup" href="signup.html">Sign Up</a>
+          </li>
+        </ul>
+        <a class=" nav-item login" href="login.html">
+        <button type="button">Log In</button>
+      </a>
+    </div>
+    </div>
+    <div>
+        <img class="img" src="gif.jpg" alt="">
+        <div class="back">
+            <img class="img1" src="logo.png" alt="">
+            <div class="col1">Sasi's Music Premium</div>
+            <div class="col2">Get Music Premium to listen to music ad-free, <br>offline & with your screen off</div>
+            <div class="col3">Prepaid and monthly plans available. Starting from ₹59.00​/month. Free trials with monthly plans. </div>
+            <div class="col4">Over <u>100M</u> <u> Songs</u> and more at your fingertips</div>
+            <div class="col5">Enjoy everysecond by <br>Single Click</div>
+        </div>  
+    </div>
+    <script>
+     document.getElementById("prev-page").addEventListener("click", function() {
+            window.history.back();
+        });
+        document.getElementById("next-page").addEventListener("click", function() {
+            window.history.forward();
+        });
+    </script>
+</body>
+</html>

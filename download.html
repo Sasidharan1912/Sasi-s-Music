@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download</title>
+    <link rel="icon" href="logo.png">
+    <script src="https://kit.fontawesome.com/3b97f54f7c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.bundle.js"></script>
+
+</head>
+<style>
+    *{
+        padding:0px;
+        margin:0px;
+    }
+    .logo{
+        height:50px;
+    }
+    .navbar{
+        position: absolute;
+        display:flex;
+        align-items: center;
+        background-color: #000000;
+        margin: -8px;
+        width:1473px;
+    }
+    .navbar ul {
+        list-style: none;
+    }
+    .navbar ul li {
+        display: inline-block;
+        margin: 0px 8px;
+        width: 70px;
+        padding-left: 20px;
+    }
+    .navbar ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 17px;
+        letter-spacing: 1px;
+    }
+    .navbar ul li a:hover,.navbar ul li a:active,.navbar ul li a:focus{
+        color: green;
+        font-size: 15px;
+    }
+    .navbar ul li.divider {
+        color: #ffffff;
+        font-size: 26px;
+        margin: 0px 20px;
+        width: auto;
+    }
+    .navbar button{
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 14px 30px;
+        border: 0px;
+        border-radius: 40px;
+        cursor: pointer;
+        margin-left: 20px;
+    }
+     .navbar button:hover,.navbar button:active,.navbar button:focus {
+        background-color: green;
+    }
+    .move{
+        margin-left: 600px;
+    }
+    .centerbar{
+        background-color: rgb(13, 228, 124);
+        position: absolute;
+        height:800px;
+        width:1473px;
+        margin:-8px;
+        z-index: -1;
+    }
+    .laptop{
+        position: relative;
+        top:200px;
+        left:600px;
+        height:100px;
+        z-index: -1;
+    }
+    .sucess{
+        position: relative;
+        top:155px;
+        left:500px;
+    }
+    .circle{
+        position: relative;
+        top:173px;
+        left:463px;
+    }
+    .col1{
+        position: relative;
+        top:230px;
+        left:520px;
+        width:400px;
+    }
+    .col1 u{
+        text-shadow: 0 2px 2px green;
+    }
+    .col2{
+        position: relative;
+        top:240px;
+        left:515px;
+        width:450px;
+    }
+
+    .col3 img{
+        position: relative;
+        top:50px;
+        height:100px;
+        left:20px
+    }
+    .col4{
+        position: relative;
+        top:320px;
+        left:555px;
+        width:400px;
+
+    }
+    .centerbar1{
+        position: absolute;
+        height:300px;
+        top:800px;
+    }
+    .col5{
+        position: relative;
+        top:50px;
+        left:400px;
+    }
+    .col6{
+        position: relative;
+        top:50px;
+        left:500px;
+    }
+    .col7 ul li{
+        display: flex;
+        position: relative;
+        top:80px;
+        left:445px;
+    }
+    .centerbar2{
+        position: absolute;
+        height:300px;
+        top:1100px;
+        width:1473px;
+        margin:-8px;
+        background-color: #1d1c1c;
+    }
+    .col8{
+        position: relative;
+        top:50px;
+        left:550px;
+    }
+    .col9{
+        position: absolute;
+        top:150px;
+        left:475px;
+        color: white;
+    }
+    .col10 ul li{
+        display: inline;
+        position: relative;
+        top:120px;
+        padding:10px;
+        left:180px;
+    }
+    .white{
+        color:white;
+    }
+    .green{
+        color:green;
+        text-decoration: underline;
+    }
+    .fa-solid{
+        color: green;
+        position: relative;
+        left:18px;
+    }
+    .topbar .prev-next-buttons button {
+        color: rgb(155, 153, 153);
+        cursor: pointer;
+        width: 34px;
+        height: 54px;
+        border-radius: 50%;
+        font-size: 18px;
+        border: 0px;
+        background-color: rgb(33, 31, 31);
+        margin-right:10px;
+        
+  }
+  .fa-chevron-left{
+    position: absolute;
+    top:20px;
+    left:140px;
+  }
+  .fa-chevron-right{
+    position: absolute;
+    top:20px;
+    left:240px;
+  }
+    .navbar-toggler {
+        height:40px;
+    }
+    .navbar-toggler-icon{
+        font-size: small;
+    }
+  @media(max-width:426px){
+    .navbar{
+        position: relative;
+        width:403%;
+        height:30%;
+    }
+    .logo{
+        position: relative;
+        top:10px;
+        height:80px;
+    }
+    .centerbar{
+        position: absolute;
+        width:403%;
+        height:220%;
+        z-index: -1;
+    }
+    .centerbar2{
+        width:403%;
+        position: relative;
+        top:1993px;
+        height:500px;
+    }
+    .navbar-toggler{
+        position: relative;
+        left:-40px;
+    }
+    .head,.nav-item{
+            position: relative;
+            top:-30px;
+    }
+    .divider{
+        position: relative;
+        left:150px;
+        top:-55px;
+    }
+    .support{
+        position: relative;
+        top:75px;
+        background-color: black;
+    }
+    .signup{
+        position: absolute;
+        left:380px;
+        top:-100px;
+        width:80px;
+    }
+    .login{
+        position: relative;
+        left:950px;
+        top:-60px;
+    }
+    .login button{
+        height:40px;
+    }
+    .divider{
+        position: relative;
+        left:240px;
+    }
+    .head,.support,.download{
+        position: relative;
+        left:100px;
+    }
+    .topbar{
+        position: absolute;
+        left:40px;
+        top:10px;
+    }
+    .circle{
+        position: absolute;
+        top:300px;
+        height:100px;
+        left:600px;
+    }
+    .laptop{
+        position: relative;
+        top:200px;
+        left:400px;
+        height:300px;
+    }
+    .sucess{
+        position: absolute;
+        top:324px;
+        left:617px;
+        height:50px;
+    }
+    .col1{
+        position: relative;
+        font-size: xx-large;
+        left:500px;
+        top:300px;
+    }
+    .col2{
+        position: relative;
+        font-size: xx-large;
+        left:300px;
+        top:400px;
+        width:900px;
+    }
+    .col3{
+        position: relative;
+        font-size: xx-large;
+        left:80px;
+        top:100px;
+    }
+    .col3 img{
+        height:200px;
+    }
+    .col4{
+        position: relative;
+        font-size: xx-large;
+        left:410px;
+        width:500px;
+        top:650px;
+    }
+    .col5{
+        position: absolute;
+        top:700px;
+        font-size: xx-large;
+        width:800px;
+    }
+    .centerbar1{
+        position: relative;
+        height:8px;
+    }
+    .col6{
+        position: relative;
+        top:800px;
+        font-size: xx-large;
+        width:800px;
+        left:330px;
+    }
+    .col7{
+        position: absolute;
+        top:850px;
+        font-size: xx-large;
+        width:800px;
+        left:-250px;
+    }
+    .col7 img{
+        height:100px;
+    }
+    .gplay img{
+        height:150px;
+        position: relative;
+        top:-23px;
+    }
+  }
+  @media(min-width:426px){
+    .logo{
+        position: relative;
+        top:15px;
+    }
+    .login{
+        position: relative;
+        left:260px;
+    }
+    .move{
+        margin-top: 20px;
+    }
+    .signup{
+        position: absolute;
+        left:1220px;
+        top:30px;
+    }
+    .divider{
+        position: absolute;
+        left:1130px;
+        top:20px;
+    }
+    .download{
+        position: absolute;
+        left:1030px;
+        top:30px;
+    }
+    .support{
+        position: absolute;
+        left:900px;
+        top:30px;
+    }
+    .head{
+        position: absolute;
+        left:770px;
+        top:30px;
+    }
+    .circle{
+        position: relative;
+        top:195px;
+    }
+    .sucess{
+        position: relative;
+        top:195px;
+    }
+    .col3{
+        position: relative;
+        left:20px;
+    }
+    .col4{
+        position: relative;
+        left:500px;
+    }
+    .gplay img{
+        height:60px;
+        position: relative;
+        top:-10px;
+    }
+    .col6{
+        position: relative;
+        top:70px;
+    }
+    .col7{
+        position: relative;
+        left:20px;
+    }
+  }
+  @media(min-width:769px){
+    .col1{
+        width:600px;
+    }
+    .navbar,.centerbar,.centerbar2{
+        width:1481px;
+    }
+  }
+</style>
+<body>
+   
+    <div class="navbar navbar-expand-lg navbar-expand-md ">
+        <ul>
+            <li>
+                <a href="index.html"><img class="logo" src="logo.png" alt="logo"></a>
+            </li>
+        </ul>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="topbar">
+            <div class="prev-next-buttons navbar1">
+              <button type="button" id="prev-page" class="fa fas fa-chevron-left"></button>
+              <button type="button" id="next-page" class="fa fas fa-chevron-right"></button>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="move right-align navbar-nav ml-auto">
+          <li class="nav-item-dropdown">
+            <a class="head" href="premium.html">Premium</a>
+          </li>
+          <li class="nav-item nav-item1">
+            <a class="support" href="support.html">Support</a>
+          </li>
+          <li class="nav-item nav-item1">
+            <a class="download" href="download.html">Download</a>
+          </li>
+          <li class=" nav-item divider">|</li>
+          <li class="nav-item nav-item1">
+            <a class="signup" href="signup.html">Sign Up</a>
+          </li>
+        </ul>
+        <a class="nav-item login" href="login.html">
+        <button type="button">Log In</button>
+      </a>
+    </div>
+    </div>
+        <div class="centerbar">
+            <img class="laptop" src="laptop.svg" alt="">
+            <img class="sucess" src="green-success-check.svg" alt="">
+            <img class="circle" src="green-circle.svg" alt="">
+            <h1 class="col1">Download <u>Sasi's</u> <u>Music</u></h1>
+            <p class="col2">Play millions of songs and podcasts on your device.</h3>
+            <a class="col3" href=""><img src="en-us dark.svg" alt=""></a>
+            <a class="col4" href=""><h4><u>Download directly from Sasi's Music</u></h4></a>
+        </div>
+        <div class="centerbar1">
+            <h1 class="col5">Bring your music to mobile and tablet, too.</h1>
+            <p class="col6">Listening on your phone or tablet is free, easy, and fun.</p>
+            <div class="col7">
+                <ul>
+                    <li>
+                        <a href=""><img src="badge-en.svg" alt=""></a>
+                        <a class="gplay" href=""><img src="badge-en (1).svg" alt=""></a>
+                        <a href=""><img src="en.png" alt="" style="border-radius: px;"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="centerbar2">
+            <img class="col8" src="all-devices.svg" alt="">
+            <h1 class="col9">One account, listen everywhere.</h1>
+            <div class="col10">
+                <ul>
+                    <li class="white">Mobile</li>
+                    <li><i class="fa-solid fa-circle-dot"></i></li>
+                    <li class="white">Computer</li>
+                    <li><i class="fa-solid fa-circle-dot"></i></li>
+                    <li class="white">Tablet</li>
+                    <li><i class="fa-solid fa-circle-dot"></i></li>
+                    <li class="green">Car</li>
+                    <li><i class="fa-solid fa-circle-dot"></i></li>
+                    <li class="green">Playstation</li>
+                    <li><i class="fa-solid fa-circle-dot"></i></li>
+                    <li class="green">XBox</li>
+                    <li><i class="fa-solid fa-circle-dot"></i></li>
+                    <li class="green">TV</li>
+                    <li><i class="fa-solid fa-circle-dot"></i></li>
+                    <li class="green">Speaker</li>
+                    <li><i class="fa-solid fa-circle-dot"></i></li>
+                    <li class="green">Web Player</li>
+                </ul>
+            </div>
+        </div>
+        <script>
+        
+            document.addEventListener('DOMContentLoaded', (event) => {
+          const prevButton = document.getElementById('prev-page');
+          const nextButton = document.getElementById('next-page');
+      
+          // Check if history API is supported
+          if (window.history && window.history.pushState) {
+              // Function to navigate to the previous page
+              function goBack() {
+                  if (window.history.length > 1) {
+                      window.history.back();
+                  } else {
+                      console.log('No previous page in history.');
+                  }
+              }
+      
+              // Function to navigate to the next page
+              function goForward() {
+                  window.history.forward();
+              }
+      
+              // Event listeners for the buttons
+              prevButton.addEventListener('click', goBack);
+              nextButton.addEventListener('click', goForward);
+          } else {
+              console.log('History API not supported.');
+          }
+      });
+          
+          </script>
+</body>
+</html>

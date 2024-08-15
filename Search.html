@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse All</title>
+    <link rel="icon" href="logo.png">
+    <script src="https://kit.fontawesome.com/3b97f54f7c.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    background-color: #121212;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 196px;
+    background-color: #000000;
+    padding: 24px;
+  }
+  .create-playlist{
+    width:200px;
+    height:80px;
+    overflow:auto;
+
+  }
+  .create-playlist-1{
+    border:1px solid white;
+    margin:10px;
+    padding:10px;
+    
+
+  }
+  .create-playlist button{
+    border-radius: 10px;
+    width:110px;
+  }
+
+  .sidebar .logo img {
+    width: 170px;
+  }
+  .sidebar .navigation ul {
+    list-style: none;
+    margin-top: 20px;
+  }
+  .sidebar .navigation ul li {
+    padding: 10px 0px;
+  }
+  .sidebar .navigation ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .sidebar .navigation ul li a:hover,
+  .sidebar .navigation ul li a:active,
+  .sidebar .navigation ul li a:focus {
+    color: #ffffff;
+  }
+  .sidebar .navigation ul li a:hover .fa,
+  .sidebar .navigation ul li a:active .fa,
+  .sidebar .navigation ul li a:focus .fa {
+    color: #b3b3b3;
+  }
+  .sidebar .navigation ul li .fa {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  .sidebar .navigation ul li a:hover .fa:hover,
+  .sidebar .navigation ul li a:hover .fa:active,
+  .sidebar .navigation ul li a:hover .fa:focus {
+    color: #ffffff;
+  }
+  .sidebar .policies {
+    position: absolute;
+    bottom: 100px;
+  }
+  .sidebar .policies ul {
+    list-style: none;
+  }
+  .sidebar .policies ul li {
+    padding-bottom: 5px;
+  }
+  .sidebar .policies ul li a {
+    color: #b3b3b3;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 10px;
+  }
+  .sidebar .policies ul li a:hover,
+  .sidebar .policies ul li a:active,
+  .sidebar .policies ul li a:focus {
+    text-decoration: underline;
+  }
+  
+  .main-container {
+    margin-left: 245px;
+    margin-bottom: 100px;
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #101010;
+    padding: 14px 30px;
+  }
+  .topbar .prev-next-buttons button {
+    color: #7a7a7a;
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    font-size: 18px;
+    border: 0px;
+    background-color: #090909;
+    margin-right: 10px;
+    z-index: 2;
+  }
+  .topbar .navbar {
+    display: flex;
+    align-items: center;
+  }
+  .navbar,.navbar1{
+    position: fixed;
+  }
+  .navbar{
+    margin-left: 600px;
+    top:2px;
+  }
+  .topbar .navbar ul {
+    list-style: none;
+  }
+  .topbar .navbar ul li {
+    display: inline-block;
+    margin: 0px 8px;
+    width: 70px;
+  }
+  .topbar .navbar ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .topbar .navbar ul li a:hover,
+  .topbar .navbar ul li a:active,
+  .topbar .navbar ul li a:focus {
+    color: #ffffff;
+    font-size: 15px;
+  }
+  .topbar .navbar ul li.divider {
+    color: #ffffff;
+    font-size: 26px;
+    margin: 0px 20px;
+    width: auto;
+  }
+  .topbar{
+    position: fixed;
+    z-index: 3;
+    background-image: linear-gradient(green,black);
+    height:30px;
+    width:1200px;
+    top:0px;
+  }
+  .topbar .navbar button {
+    background-color: grey;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 30px;
+    border: 0px;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+  .topbar .navbar button:hover,
+  .topbar .navbar button:active,
+  .topbar .navbar button:focus {
+    background-color: #f2f2f2;
+  }
+  .search{
+    border-radius: 20px;
+    height:30px;
+    width:250px;
+    position: relative;
+    top:-5px;
+    left:110px;
+    text-align: center;
+    background-color: rgb(168, 166, 166);
+  }
+  .search1{
+    position: relative;
+    top:-5px;
+    left:130px;
+    border-radius: 10px;
+    border:1px solid white;
+    height:30px;
+    width:60px;
+  }
+  .maincontainer{
+    position: absolute;
+    color:white;
+    top:90px;
+    left:280px;
+    height:240px;
+  }
+  .maincontainer  li,.maincontainer2 li{
+    list-style: none;
+  }
+  .maincontainer2{
+    position: absolute;
+    color:white;
+    top:250px;
+    left:280px;
+  }
+  .browse1{
+    top:20px;
+    position: relative;
+    padding:35px;
+    display: inline-block;
+    border:1px solid transparent;
+    border-radius: 10px;
+    background-color: #7a7a7a;
+  }
+  @media(max-width:429px){
+    .sidebar{
+      width:130px;
+    }
+    .create-playlist{
+      width:150px;
+    }
+  }
+</style>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="logo.png" alt="logo" style="height:100px;width:100px;position:relative;left:40px">
+          </a>
+        </div>
+  
+        <div class="navigation">
+          <ul>
+            <li>
+              <a href="index.html">
+                <span class="fa fa-home"></span>
+                <span>Home</span>
+              </a>
+            </li>
+  
+            <li>
+              <a href="Search.html">
+                <span class="fa fa-search"></span>
+                <span>Search</span>
+              </a>
+            </li>
+  
+            <li>
+              <a href="#">
+                <span class="fa fas fa-book"></span>
+                <span>Your Library</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="navigation">
+          <ul>
+            <li>
+              <a href="#">
+                <span class="fa fas fa-plus-square"></span>
+                <span>Create Playlist</span><br><br>
+                <div class="create-playlist">
+                  <div class="create-paylist-1">Create your first playlist<br><br>it's easy to create <br><br> <button>Create Playlist</button> <div></div><br><br>
+                  <div class="create-paylist-2">Let's find some podcasts to <br>follow <br><br> We'll keep you updated on new episodes <br><br><button>Browse Podcasts</button></div>
+                </div>
+                
+              </a>
+            </li>
+  
+            <li>
+              <a href="#">
+                <span class="fa fas fa-heart"></span>
+                <span>Liked Songs</span>
+              </a>
+            </li><br><br><br>
+  
+            <li>
+                <button href="#" style="background-color: transparent;border-radius: 10px;border:1px solid white;color:white;width:110px;height:30px">
+                <span class="fa fas fa-globe" style="color:green"></span>
+                <span>English</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="policies">
+          <ul>
+            <li>
+              <a href="#">Cookies</a>
+            </li>
+            <li>
+              <a href="#">Privacy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="main-container">
+        <div class="topbar">
+          <div class="prev-next-buttons navbar1">
+            <button type="button" id="prev-page" class="fa fas fa-chevron-left"></button>
+            <button type="button" id="next-page" class="fa fas fa-chevron-right"></button>
+          </div>
+          
+          <div class="searchbox">
+            <input class="search" id="itemInput" type="text" placeholder="Search">
+            <button class="search1" onclick="addItem()">Search</button>
+          </div>
+          <div class="navbar">
+            
+            <ul>
+              <li>
+                <a href="premium.html">Premium</a>
+              </li>
+              <li>
+                <a href="support.html">Support</a>
+              </li>
+              <li>
+                <a href="download.html">Download</a>
+              </li>
+              <li class="divider">|</li>
+              <li>
+                <a href="signup.html">Sign Up</a>
+              </li>
+            </ul>
+            <a href="login.html">
+            <button type="button">Log In</button>
+            </a>
+          </div>
+        </div>
+        
+        <div class="maincontainer">
+            <ul>
+                <li>
+                    <h3 class="browse">Browse All</h3>
+                    <h5 class="browse1">Deva hits</h5>
+                    <h5 class="browse1">Ilayaraja melody</h5>
+                    <h5 class="browse1">SPB romance</h5>
+                    <h5 class="browse1">Kuthu songs</h5>
+                    <h5 class="browse1">Deva gana</h5>
+                    <h5 class="browse1">Chithra Melody</h5>
+                    <h5 class="browse1">Unnikrishnan Melody</h5>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="maincontainer2">
+            <ul>
+                <li>
+                    <h3 id="itemList">Recent Searches</h3>
+                </li>
+               
+            </ul>
+
+        </div>
+        
+        <script>
+        function addItem() {
+            var ul = document.getElementById("itemList");
+            var input = document.getElementById("itemInput");
+            var itemText = input.value.trim();
+            if (itemText === "") {
+                alert("Search box is empty");
+                return;
+            }
+
+            var li = document.createElement("li");
+            var textNode = document.createTextNode(itemText);
+            li.appendChild(textNode);
+
+            var span = document.createElement("span");
+            var closeText = document.createTextNode("✖");
+            span.className = "close";
+            span.appendChild(closeText);
+            span.onclick = function() {
+                var li = this.parentElement;
+                li.style.display = "none";
+            };
+            li.appendChild(span);
+
+            ul.appendChild(li);
+            input.value = "";
+        }
+
+      
+      document.addEventListener('DOMContentLoaded', (event) => {
+    const prevButton = document.getElementById('prev-page');
+    const nextButton = document.getElementById('next-page');
+
+    // Check if history API is supported
+    if (window.history && window.history.pushState) {
+        // Function to navigate to the previous page
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                console.log('No previous page in history.');
+            }
+        }
+
+        // Function to navigate to the next page
+        function goForward() {
+            window.history.forward();
+        }
+
+        // Event listeners for the buttons
+        prevButton.addEventListener('click', goBack);
+        nextButton.addEventListener('click', goForward);
+    } else {
+        console.log('History API not supported.');
+    }
+});
+
+</script>
+</body>
+</html>
