@@ -6,6 +6,8 @@
     <title>Browse All</title>
     <link rel="icon" href="logo.png">
     <script src="https://kit.fontawesome.com/3b97f54f7c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="bootstrap.bundle.js"></script>
 </head>
 <style>
     * {
@@ -23,7 +25,7 @@
     left: 0;
     top: 0;
     bottom: 0;
-    width: 196px;
+    width: 270px;
     background-color: #000000;
     padding: 24px;
   }
@@ -46,7 +48,9 @@
   }
 
   .sidebar .logo img {
-    width: 170px;
+    width: 120px;
+    position: relative;
+    left:40px;
   }
   .sidebar .navigation ul {
     list-style: none;
@@ -82,7 +86,7 @@
   }
   .sidebar .policies {
     position: absolute;
-    bottom: 100px;
+    bottom: 150px;
   }
   .sidebar .policies ul {
     list-style: none;
@@ -123,7 +127,6 @@
     border: 0px;
     background-color: #090909;
     margin-right: 10px;
-    z-index: 2;
   }
   .topbar .navbar {
     display: flex;
@@ -167,9 +170,9 @@
     position: fixed;
     z-index: 3;
     background-image: linear-gradient(green,black);
-    height:30px;
+    height:65px;
     width:1200px;
-    top:0px;
+    left:270px;
   }
   .topbar .navbar button {
     background-color: grey;
@@ -187,167 +190,587 @@
   .topbar .navbar button:focus {
     background-color: #f2f2f2;
   }
-  .search{
-    border-radius: 20px;
-    height:30px;
-    width:250px;
+  .spotify-playlists, .spotify-playlists-2 {
+    padding: 20px 40px;
     position: relative;
-    top:-5px;
-    left:110px;
-    text-align: center;
-    background-color: rgb(168, 166, 166);
+    top:50px;
+    z-index: 0;
   }
-  .search1{
-    position: relative;
-    top:-5px;
-    left:130px;
-    border-radius: 10px;
-    border:1px solid white;
-    height:30px;
-    width:60px;
-  }
-  .maincontainer{
+  .showall{
     position: absolute;
-    color:white;
-    top:90px;
-    left:280px;
-    height:240px;
+    left: 1120px;
+    top:30px;
+    color:grey;
+    text-decoration: none;
   }
-  .maincontainer  li,.maincontainer2 li{
-    list-style: none;
+  .showall:hover{
+    color: #f2f2f2;
   }
-  .maincontainer2{
-    position: absolute;
-    color:white;
-    top:250px;
-    left:280px;
+  .spotify-playlists h2, .spotify-playlists-2 h2 {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 20px;
   }
-  .browse1{
-    top:20px;
-    position: relative;
-    padding:35px;
-    display: inline-block;
-    border:1px solid transparent;
+  .spotify-playlists .list , .spotify-playlists-2 .list {
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+    height: 240px;
+  }
+  .spotify-playlists .list .item , .spotify-playlists-2 .list .item{
+    min-width: 140px;
+    width: 185px;
+    height: 240px;
+    padding: 15px;
+    background-color: #181818;
     border-radius: 10px;
-    background-color: #7a7a7a;
+    cursor: pointer;
+    transition: all ease 0.4s;
   }
-  @media(max-width:429px){
-    .sidebar{
-      width:130px;
-    }
-    .create-playlist{
-      width:150px;
-    }
+  .spotify-playlists .list .item:hover, .spotify-playlists-2 .list .item:hover{
+    background-color: #252525;
   }
+  .spotify-playlists .list .item img {
+    width: 100%;
+    height: 130px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+  }
+  .spotify-playlists-2 .list .item img {
+    width: 100%;
+    height: 130px;
+    margin-bottom: 10px;
+  }
+  .spotify-playlists .list .item .play , .spotify-playlists-2 .list .item .play{
+    position: relative;
+  }
+  .spotify-playlists .list .item .play .fa , .spotify-playlists-2 .list .item .play .fa {
+    position: absolute;
+    right: 0px;
+    top: -45px;
+    padding: 18px;
+    background-color: white;
+    border-radius: 100%;
+    opacity: 0;
+    transition: all ease 0.4s;
+  }
+  .spotify-playlists .list .item:hover .play .fa, .spotify-playlists-2 .list .item:hover .play .fa {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+  .spotify-playlists .list .item h4 , .spotify-playlists-2 .list .item h4{
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .spotify-playlists .list .item p, .spotify-playlists-2 .list .item p {
+    color: #989898;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+  .spotify-playlists hr, .spotify-playlists-2 hr {
+    margin: 70px 0px 0px;
+    border-color: #636363;
+  }
+  
+  .preview {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height:70px;
+    background: linear-gradient(to left, green, black);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .preview h6 {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+    margin-bottom: 0px;
+  }
+  .preview p {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .preview button {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 0px;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+  .audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom:-32px;
+    left:700px;
+    z-index: 1;
+  }
+.audio-player button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.audio-player .controls button:hover {
+    color:blue;
+}
+.audio-player .controls {
+    display: flex;
+}
+.audio-player .controls button {
+    height:20px;
+    position: relative;
+    top:-37px;
+    font-size: small;
+    background-color: transparent;
+    color: black;
+}
+@media (max-width: 426px) {
+            .sidebar {
+                width: 120px;
+                padding: 10px;
+            }
+
+            .sidebar .logo img{
+                height:50px;
+                width:50px;
+                position: relative;
+                left:0px;
+            }
+
+            .sidebar .navigation ul li a {
+                font-size: 10px;
+                position: relative;
+                left: -30px;
+                width:100px;
+                
+            }
+
+            .sidebar .policies ul li a {
+                font-size: 8px;
+            }
+
+            .main-container {
+                margin-left: 120px;
+            }
+
+            .topbar {
+                width: 100%;
+                padding: 10px;
+                height: auto;
+                display: flex;
+            }
+
+            .topbar .navbar ul li {
+                margin: 0 4px;
+                width: auto;
+            }
+
+            .topbar .navbar button {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .spotify-playlists,
+            .spotify-playlists-2 {
+                padding: 10px;
+                width:200px;
+            }
+
+            .spotify-playlists .list,
+            .spotify-playlists-2 .list {
+              
+                flex-direction:column;
+                height: auto;
+                overflow: visible;
+            }
+
+            .spotify-playlists .list .item,
+            .spotify-playlists-2 .list .item {
+                width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
+
+            .spotify-playlists .list .item img,
+            .spotify-playlists-2 .list .item img {
+                height: auto;
+                border-radius: 10px;
+                
+            }
+
+            .showall {
+                left: auto;
+                right: 10px;
+            }
+
+            .preview {
+                height: 50px;
+                flex-direction: column;
+            }
+
+            .preview h4 {
+                font-size: 10px;
+            }
+            .preview .text p{
+              font-size: 8px;
+              position: relative;
+              top:-8px;
+              left:-35px;
+              width:190px;
+            }
+            .preview .text h6{
+              font-size: 15px;
+              position: relative;
+              top:-8px;
+              left:-35px;
+            }
+            .preview button{
+              position: absolute;
+              font-size: x-small;
+              right:15px;
+              bottom:5px;
+              width:100px;
+            }
+            .topbar{
+              position: fixed;
+              left:120px;
+              width:fit;
+              height:100px;
+            }
+            .topbar .navbar1{
+              top:0px;
+            }
+            .navbar-toggler{
+              position: fixed;
+              top:0px;
+              right:10px;
+              height:30px;
+            }
+            .navbar-toggler-icon{
+              position: relative;
+              top:-5px;
+            }
+            .navbar .head{
+              position: absolute;
+            }
+            .navigation,.home{
+              display:inline-block
+            }
+            .navigation{
+              position: relative;
+              top:-10px;
+            }
+            .create{
+              position: relative;
+              top:-30px;
+            }
+            .create-playlist{
+              position: relative;
+              left:-30px;
+              width:105px;
+            }
+            .showall{
+              position: absolute;
+              top:40px;
+              left:140px;
+            }
+            .showall h5{
+              font-size: small;
+
+            }
+            .policies{
+              position: relative;
+              left:-15px;
+            }
+            .language{
+              position: relative;
+              left:-40px;
+              top:-20px;
+              font-size: small;
+            }
+            
+            .nav-item{
+              position: relative;
+              top:15px;
+              left:-500px;
+              padding:5px;
+            }
+            .login button{
+              height:50px;
+              position: relative;
+              left:-20px;
+            }
+            .head{
+              position: relative;
+              top:0px;
+              left:-490px;
+            }
+            .login{
+              position: relative;
+              left:-400px;
+              top:-95px;
+            }
+            .signup{
+              position: relative;
+              left:110px;
+              top:-115px;
+            }
+            .login button{
+              width:90px;
+              height:30px;
+            }
+            
+            .searchbox{
+              position: relative;
+              top:100px;
+              left:20px;
+            }
+            .maincontainer{
+              position: relative;
+              top:140px;
+              color:white;
+            }
+            .maincontainer ul li{
+              background-color: #636363;
+              list-style: none;
+              padding: 10px;
+              width:250px;
+            }
+            .maincontainer ul li h3{
+              text-decoration: underline;
+              color:greenyellow;
+            }
+            .maincontainer2{
+              position: relative;
+              top:140px;
+              text-decoration: underline;
+              color: greenyellow;
+            }
+            .maincontainer2 ul li{
+              list-style: none;
+              background-color: rgb(49, 49, 50);
+              width:fit-content;
+              padding: 10px;
+
+            }
+        }
+        @media(max-width:326px){
+          .nav-item{
+            position: relative;
+            left:-520px;
+          }
+          .head{
+            position: relative;
+            left:-510px;
+          }
+          .login{
+            position: relative;
+            left:-430px;
+            top:-50px;
+          }
+          .divider{
+            position: absolute;
+            left:1000px;
+          }
+          .signup{
+            top:-65px;
+            left:100px;
+
+          }
+          .maincontainer2 ul li h3{
+            font-size: medium;
+          }
+        }
+
+        @media(min-width:326px){
+          .spotify-playlists,
+          .spotify-playlists-2{
+            position: relative;
+            left:30px;
+          }
+          .signup{
+            position: relative;
+            left:100px;
+            top:-65px;
+          }
+          .login button{
+            position: relative;
+            left:70px;
+            top:50px;
+          }
+          .nav-item{
+            position: relative;
+            left:-515px;
+          }
+          .head{
+            position: relative;
+            left:-505px;
+          }
+          .divider{
+            position: absolute;
+            left:1000px;
+          }
+        }
+
+        @media(min-width:376px){
+          .spotify-playlists,
+          .spotify-playlists-2{
+            position: relative;
+            left:50px;
+          }
+        }
+
+        @media(min-width:426px){
+          .login button{
+            width:109px;
+            position: relative;
+            right:20px;
+            bottom:5px;
+          }
+          .showall{
+            width:100px;
+            position: absolute;
+            right:30px;
+          }
+          
+            .topbar{
+              width:1248px;
+            }
+          
+          
+        }
+
 </style>
 <body>
+
     <div class="sidebar">
-        <div class="logo">
-          <a href="index.html">
-            <img src="logo.png" alt="logo" style="height:100px;width:100px;position:relative;left:40px">
-          </a>
-        </div>
-  
-        <div class="navigation">
-          <ul>
-            <li>
-              <a href="index.html">
-                <span class="fa fa-home"></span>
-                <span>Home</span>
-              </a>
-            </li>
-  
-            <li>
-              <a href="Search.html">
-                <span class="fa fa-search"></span>
-                <span>Search</span>
-              </a>
-            </li>
-  
-            <li>
-              <a href="#">
-                <span class="fa fas fa-book"></span>
-                <span>Your Library</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-  
-        <div class="navigation">
-          <ul>
-            <li>
-              <a href="#">
-                <span class="fa fas fa-plus-square"></span>
-                <span>Create Playlist</span><br><br>
-                <div class="create-playlist">
-                  <div class="create-paylist-1">Create your first playlist<br><br>it's easy to create <br><br> <button>Create Playlist</button> <div></div><br><br>
-                  <div class="create-paylist-2">Let's find some podcasts to <br>follow <br><br> We'll keep you updated on new episodes <br><br><button>Browse Podcasts</button></div>
-                </div>
-                
-              </a>
-            </li>
-  
-            <li>
-              <a href="#">
-                <span class="fa fas fa-heart"></span>
-                <span>Liked Songs</span>
-              </a>
-            </li><br><br><br>
-  
-            <li>
-                <button href="#" style="background-color: transparent;border-radius: 10px;border:1px solid white;color:white;width:110px;height:30px">
-                <span class="fa fas fa-globe" style="color:green"></span>
-                <span>English</span>
-              </button>
-            </li>
-          </ul>
-        </div>
-  
-        <div class="policies">
-          <ul>
-            <li>
-              <a href="#">Cookies</a>
-            </li>
-            <li>
-              <a href="#">Privacy</a>
-            </li>
-          </ul>
-        </div>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.png" alt="logo">
+        </a>
       </div>
-  
-      <div class="main-container">
-        <div class="topbar">
-          <div class="prev-next-buttons navbar1">
-            <button type="button" id="prev-page" class="fa fas fa-chevron-left"></button>
-            <button type="button" id="next-page" class="fa fas fa-chevron-right"></button>
-          </div>
-          
-          <div class="searchbox">
-            <input class="search" id="itemInput" type="text" placeholder="Search">
-            <button class="search1" onclick="addItem()">Search</button>
-          </div>
-          <div class="navbar">
-            
-            <ul>
-              <li>
-                <a href="premium.html">Premium</a>
+
+      <div class="navigation navigation1">
+        <ul>
+          <li>
+            <a class="home" href="index.html">
+              <span class="fa fa-home"></span>
+              <span>Home</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="Search" href="Search.html">
+              <span class="fa fa-search"></span>
+              <span>Search</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="library" href="library.html">
+              <span class="fa fas fa-book"></span>
+              <span>Your Library</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="navigation">
+        <ul>
+          <li>
+            <a class="create" href="#">
+              <span class="fa fas fa-plus-square"></span>
+              <span>Create Playlist</span><br><br>
+              <div class="create-playlist">
+                <div class="create-paylist-1">Create your first playlist<br><br>it's easy to create <br><br> <button>Create Playlist</button> <div></div><br><br>
+                <div class="create-paylist-2">Let's find some podcasts to <br>follow <br><br> We'll keep you updated on new episodes <br><br><button>Browse Podcasts</button></div>
+              </div>
+              
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="fa fas fa-heart"></span>
+              <span>Liked Songs</span>
+            </a>
+          </li><br><br><br>
+
+          <li class="language">
+              <button href="#" style="background-color: transparent;border-radius: 10px;border:1px solid white;color:white;width:110px;height:30px">
+              <span class="fa fas fa-globe" style="color:green"></span>
+              <span>English</span>
+            </button>
+          </li>
+        </ul>
+        
+      </div>
+      
+
+      <div class="policies">
+        <ul>
+          <li>
+            <a href="#">Cookies</a>
+          </li>
+          <li>
+            <a href="#">Privacy</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="topbar">
+        <div class="prev-next-buttons navbar1">
+          <button type="button" id="prev-page" class="fa fas fa-chevron-left"></button>
+          <button type="button" id="next-page" class="fa fas fa-chevron-right"></button>
+        </div>
+        <div class="searchbox">
+          <input class="search" id="itemInput" type="text" placeholder="Search">
+          <button class="search1" onclick="addItem()">Search</button>
+        </div>
+        <div class="navbar navbar-expand-lg navbar-expand-md ">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="move right-align navbar-nav ml-auto">
+              <li class="nav-item-dropdown">
+                <a class="head" href="premium.html">Premium</a>
               </li>
-              <li>
-                <a href="support.html">Support</a>
+              <li class="nav-item nav-item1">
+                <a class="support" href="support.html">Support</a>
               </li>
-              <li>
-                <a href="download.html">Download</a>
+              <li class="nav-item nav-item1">
+                <a class="download" href="download.html">Download</a>
               </li>
-              <li class="divider">|</li>
-              <li>
-                <a href="signup.html">Sign Up</a>
+              <li class=" nav-item divider">|</li>
+              <li class="nav-item nav-item1">
+                <a class="signup" href="signup.html">Sign Up</a>
               </li>
             </ul>
-            <a href="login.html">
-            <button type="button">Log In</button>
-            </a>
-          </div>
+            <a class="nav-item login" href="login.html">
+            <button class="log" type="button">Log In</button>
+          </a>
         </div>
+        </div>
+      </div>
         
         <div class="maincontainer">
             <ul>
